@@ -23,7 +23,7 @@ model Product {
   slug               String
   description        String
   basePrice          Decimal  @map("base_price") @db.Decimal(8, 2)
-  imageUrl           String   @map("image_url")
+  imageUrls          String[] @map("image_urls")
   category           Category @relation(fields: [categoryId], references: [id])
   categoryId         String   @map("category_id")
   discountPercentage Int      @default(0) @map("discount_percentage")
